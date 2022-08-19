@@ -1,2 +1,3 @@
 .vs/
-sample-library/node_modules/
+sample-library/node_modules
+sample-library-consumer/node_modules
