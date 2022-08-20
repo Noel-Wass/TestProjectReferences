@@ -1,1 +1,0 @@
-export { PrintModule } from './src/print-module';
