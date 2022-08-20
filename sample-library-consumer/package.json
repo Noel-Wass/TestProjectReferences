@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./dist/test",
-    "tsc": "tsc"
+    "test1": "node ./dist/test1",
+    "test2": "node ./dist/test/test2",
+    "tsc": "tsc",
+    "build": "tsc --build"
   },
   "author": "Noel Wass",
   "license": "ISC",
