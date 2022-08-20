@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test1": "node ./dist/test1",
-    "test2": "node ./dist/test/test2",
+    "test1": "node ./dist/test/test1",
     "tsc": "tsc",
     "build": "tsc --build"
   },

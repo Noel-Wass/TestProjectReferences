@@ -1,5 +1,5 @@
 {
-  "include": [ "./test1.ts" ,"./test/test2.ts"],
+  "include": [ "./test/*.ts", "./src/*.ts", "./index.ts"],
   "references": [
     { "path": "../sample-library" }
   ],
@@ -34,10 +34,12 @@
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "sample-library": [ "../sample-library/src/index"],
-      "test-sample-library": [ "../../sample-library/src/index" ]
+      "sample-library": [ "../../sample-library/src/index"],
+      "test/sample-library": [ "../../../sample-library/src/index" ]
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */
-    // "rootDirs": [".","./test"],                         /* Allow multiple folders to be treated as one when resolving modules. */
+    "rootDirs": [
+      "src","test"
+    ],                         /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
