@@ -1,1 +1,1 @@
-export { PrintModule } from './print-module';
+export {PrintModule } from './print-module'

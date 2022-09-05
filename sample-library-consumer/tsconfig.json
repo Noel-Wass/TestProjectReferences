@@ -1,5 +1,10 @@
 {
-  "include": [ "./test/*.ts", "./src/*.ts", "./index.ts"],
+  "include": [
+    "./test/*.ts",
+    "./src/*.ts",
+    "./index.ts",
+    "sample-library-source/*.ts"
+  ],
   "references": [
     { "path": "../sample-library" }
   ],
@@ -30,15 +35,14 @@
 
     /* Modules */
     "module": "commonjs", /* Specify what module code is generated. */
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+     "rootDir": "./",                                  /* Specify the root folder within your source files. */
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "sample-library": [ "../../sample-library/src/index"],
-      "test/sample-library": [ "../../../sample-library/src/index" ]
+      "sample-library-source": ["../../sample-library/index" ]    
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */
     "rootDirs": [
-      "src","test"
+      "src","test","sample-library-source"
     ],                         /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
