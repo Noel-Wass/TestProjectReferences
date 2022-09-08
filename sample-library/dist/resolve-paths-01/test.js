@@ -25,11 +25,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = __importStar(require("path"));
 function relativePathFromRootToRelative(inputRelative) {
-    const s1 = relativePathFromRootToCurrent();
-    const s2 = inputRelative;
-    const s3 = path.relative(s1, s2);
-    console.log(`relativePathFromRootToRelative=${s3}`);
-    return path.relative(s1, s2);
+    const rootPath = './';
+    const outputDir = './dist';
+    const inputRelative2 = path.resolve(outputDir, inputRelative);
+    console.log(`inputRelative2=${inputRelative2}`);
+    const currentPath = inputRelative2;
+    console.log(`relativePathFromRootToRelative=${currentPath}`);
+    return currentPath;
 }
 function relativePathFromRootToCurrent() {
     //rootPath represents how many levels one needs to go up to find the directory containing package.json and tsconfig.json
@@ -69,10 +71,16 @@ async function test1() {
     const path2 = "./src/components";
     console.log(path.dirname('./x/y/z'));
     console.log(path.relative(path1, path2));
+    console.log('Testing...');
     const s1 = relativePathFromRootToCurrent();
-    const s2 = relativePathFromRootToRelative(path2);
-    const s3 = path.relative(s1, s2);
-    console.log(s3);
+    const s2 = replaceSeparatorWithForwardSlash(path.resolve('./dist', './src/components'));
+    console.log(`s1=${s1}`);
+    console.log(`s2=${s2}`);
+    const s3 = replaceSeparatorWithForwardSlash(path.normalize(path.relative(s1, s2)));
+    console.log(`s3=${s3}`);
+    //const s2 = relativePathFromRootToRelative(path2)
+    //const s3 = path.relative(s1, s2);
+    //console.log(s3);
     //const rootPath = "./";
     //const x: string = process.cwd();
     //console.log(x);
