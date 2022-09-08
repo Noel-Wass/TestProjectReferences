@@ -1,14 +1,18 @@
 {
-  "name": "sample-library",
+  "name": "ambient-test",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "scripts": {
-    "test1": "node ./dist/test/test1",
+    "webpack-build": "webpack --config webpack.config.js",
+    "test1": "node --experimental-modules ./dist/test/test1.js",
     "tsc": "tsc"
   },
   "author": "Noel Wass",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "18.7.15",
+    "tsconfig-paths": "4.1.0",
     "typescript": "^4.7.4"
   }
 }

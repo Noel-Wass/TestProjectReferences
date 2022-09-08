@@ -1,5 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("../src/index");
-const printModule = new index_1.PrintModule();
-printModule.printMessage("Hello from Pluralsight");
+const print_module_1 = require("../src/components/print-module");
+const printModule2 = new print_module_1.PrintModule();
+printModule2.printMessage("Hello from Pluralsight");
