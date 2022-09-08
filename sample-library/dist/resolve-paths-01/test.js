@@ -25,13 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = __importStar(require("path"));
 function relativePathFromRootToRelative(inputRelative) {
-    const rootPath = './';
     const outputDir = './dist';
-    const inputRelative2 = path.resolve(outputDir, inputRelative);
-    console.log(`inputRelative2=${inputRelative2}`);
-    const currentPath = inputRelative2;
-    console.log(`relativePathFromRootToRelative=${currentPath}`);
-    return currentPath;
+    return replaceSeparatorWithForwardSlash(path.resolve(outputDir, inputRelative));
 }
 function relativePathFromRootToCurrent() {
     //rootPath represents how many levels one needs to go up to find the directory containing package.json and tsconfig.json
@@ -40,17 +35,17 @@ function relativePathFromRootToCurrent() {
     const rootPath = './';
     const currentPath = __dirname;
     console.log(currentPath);
-    const relativePathToCurrent = path.relative(rootPath, currentPath);
+    const relativePathToCurrent = replaceSeparatorWithForwardSlash(path.relative(rootPath, currentPath));
     const relativePathToCurrent2 = prependRootPath(rootPath, relativePathToCurrent);
-    const relativePathToCurrent3 = replaceSeparatorWithForwardSlash(relativePathToCurrent2);
-    console.log(`relativePathFromRootToCurrent = ${relativePathToCurrent3}`);
-    return relativePathToCurrent3;
+    console.log(`relativePathFromRootToCurrent = ${relativePathToCurrent2}`);
+    return relativePathToCurrent2;
 }
 function prependSeparator(inputString) {
-    const separator = path.sep;
+    const separator = replaceSeparatorWithForwardSlash(path.sep);
     return ".".concat(separator, inputString);
 }
 function prependRootPath(rootPath, inputString) {
+    const inputString2 = replaceSeparatorWithForwardSlash(inputString);
     return rootPath.concat(inputString);
 }
 function replaceSeparatorWithForwardSlash(inputString) {
@@ -70,14 +65,19 @@ async function test1() {
     const path1 = "./test";
     const path2 = "./src/components";
     console.log(path.dirname('./x/y/z'));
-    console.log(path.relative(path1, path2));
+    console.log(`computed relative path of ${path1} to ${path2} is
+        ${replaceSeparatorWithForwardSlash(path.relative(path1, path2))}`);
     console.log('Testing...');
+    const s1A = replaceSeparatorWithForwardSlash(path.resolve('./dist', __dirname));
+    console.log(`s1A=${s1A}`);
     const s1 = relativePathFromRootToCurrent();
     const s2 = replaceSeparatorWithForwardSlash(path.resolve('./dist', './src/components'));
     console.log(`s1=${s1}`);
     console.log(`s2=${s2}`);
-    const s3 = replaceSeparatorWithForwardSlash(path.normalize(path.relative(s1, s2)));
+    const s3 = replaceSeparatorWithForwardSlash(path.relative(s1, s2));
     console.log(`s3=${s3}`);
+    const s3A = replaceSeparatorWithForwardSlash(path.relative(s1A, s2));
+    console.log(`s3A=${s3A}`);
     //const s2 = relativePathFromRootToRelative(path2)
     //const s3 = path.relative(s1, s2);
     //console.log(s3);
