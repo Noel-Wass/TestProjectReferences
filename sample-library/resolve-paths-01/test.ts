@@ -51,48 +51,42 @@ function replaceSeparatorWithForwardSlash(inputString: string): string {
     return inputString.replaceAll(reg4, "/");
 }
 
-async function test1() {
-    const path1 = "./test";
+async function test1A() {
+    console.log('test1A...');
+    console.log('*********');
+    const path2 = "./src/components";
+    const s1 = replaceSeparatorWithForwardSlash(path.resolve('./dist', __dirname));
+    const s2 = replaceSeparatorWithForwardSlash(path.resolve('./dist', './src/components'));
+    const s3 = replaceSeparatorWithForwardSlash(path.relative(s1, s2));
+    console.log(`path2=${path2}
+s1 = ${s1}
+s2 = ${s2}
+s3 = ${s3}`)
+}
+test1A();
+
+async function test1B() {
+    console.log('test1B...');
+    console.log('**********');
+    const path2 = "./src/components";
+    const s1 = replaceSeparatorWithForwardSlash(__dirname);
+    const s2 = replaceSeparatorWithForwardSlash(path.resolve('./dist', './src/components'));
+    const s3 = replaceSeparatorWithForwardSlash(path.relative(s1, s2));
+    console.log(`path2=${path2}
+s1 = ${s1}
+s2 = ${s2}
+s3 = ${s3}`)
+}
+test1B();
+
+async function test1C() {
+    console.log('test1C...')
+    console.log('*********');
+    const path1 = "./resolve-paths-01";
     const path2 = "./src/components";
     console.log(path.dirname('./x/y/z'));
     console.log(`computed relative path of ${path1} to ${path2} is
         ${replaceSeparatorWithForwardSlash(path.relative(path1, path2))}`)
-
-
-    
-    console.log('Testing...');
-    const s1A = replaceSeparatorWithForwardSlash(path.resolve('./dist', __dirname));
-    console.log(`s1A=${s1A}`);
-    const s1 = relativePathFromRootToCurrent();
-    const s2 = replaceSeparatorWithForwardSlash(path.resolve('./dist', './src/components'));
-    console.log(`s1=${s1}`);
-    console.log(`s2=${s2}`);
-    const s3 = replaceSeparatorWithForwardSlash(path.relative(s1, s2));
-    console.log(`s3=${s3}`);
-    const s3A = replaceSeparatorWithForwardSlash(path.relative(s1A, s2));
-    console.log(`s3A=${s3A}`);
-    //const s2 = relativePathFromRootToRelative(path2)
-    //const s3 = path.relative(s1, s2);
-    //console.log(s3);
-
-    //const rootPath = "./";
-    //const x: string = process.cwd();
-    //console.log(x);
-
-    //const currentPath = __dirname;
-    //console.log(currentPath);
-
-    //const relativePathToCurrent = path.relative(rootPath, currentPath);
-    //console.log(`relativePathToCurrent = ${relativePathToCurrent}`);
-
-    //const relativePathToCurrent2 = prependSeparator(relativePathToCurrent);
-
-    //const relativePathToCurrent3 = replaceSeparatorWithForwardSlash(relativePathToCurrent2);
-
-    //console.log(`relativePathToCurrent3=${relativePathToCurrent3}`);
-
-    
-
 }
-test1();
+test1C();
 
