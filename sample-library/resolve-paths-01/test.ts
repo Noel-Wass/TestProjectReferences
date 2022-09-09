@@ -90,3 +90,4 @@ async function test1C() {
 }
 test1C();
 
+export { };

@@ -49,3 +49,5 @@ async function test6() {
 }
 test6();
 
+export { };
+
