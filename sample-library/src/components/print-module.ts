@@ -4,6 +4,10 @@ export class PrintModule {
     }
 }
 
+export function CreatePrintModule(): PrintModule {
+    return new PrintModule();
+}
+
 
 
 
