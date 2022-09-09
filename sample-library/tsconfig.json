@@ -2,7 +2,8 @@
     "include":[
       "./src/components/*.ts",
       "./test/*.ts",
-      "./resolve-paths-01/*.ts"
+      "./resolve-paths-01/*.ts",
+      "./resolve-paths-02/*.ts"
     ],
     "compilerOptions":
     {
@@ -43,7 +44,8 @@
       "rootDirs": [
         "./src/components",
         "./test",
-        "./resolve-paths-01"
+        "./resolve-paths-01",
+        "./resolve-paths-02"
       ], /* Allow multiple folders to be treated as one when resolving modules. */
       // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
       // "types": ["ambient-test"],                                      /* Specify type package names to be included without being referenced in a source file. */
