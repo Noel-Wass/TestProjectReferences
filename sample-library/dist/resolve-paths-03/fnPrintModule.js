@@ -23,10 +23,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.api = void 0;
-async function api() {
+exports.fnPrintModule = void 0;
+async function fnPrintModule() {
     let path2 = '../src/components/print-module';
     const { PrintModule } = await Promise.resolve().then(() => __importStar(require(path2)));
     return PrintModule;
 }
-exports.api = api;
+exports.fnPrintModule = fnPrintModule;
