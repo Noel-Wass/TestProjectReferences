@@ -1,6 +1,7 @@
-import {fnPrintModule, IPrintModule } from './fnPrintModule';
+import { fnPrintModule, IPrintModule } from './fnPrintModule';
 
-declare type PrintModuleAPI = {
+
+export declare type PrintModuleAPI = {
     PrintModule: IPrintModule
 }
 
