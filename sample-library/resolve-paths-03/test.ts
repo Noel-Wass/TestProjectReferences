@@ -1,8 +1,8 @@
-import { fnPrintModule, IPrintModule } from './fnPrintModule';
+import { PromiseAPI, PrintModuleAPI } from './PromiseAPI';
 
 async function test() {
-    const PrintModule: IPrintModule = await fnPrintModule();
-    const printModule = new PrintModule();
+    const API: PrintModuleAPI = await PromiseAPI;
+    const printModule = new API.PrintModule();
     printModule.printMessage('Hello!!!');
     printModule.printMessage('Goodbye!!!');
 }

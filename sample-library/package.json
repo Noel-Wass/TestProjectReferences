@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "commonjs",
+  "types": "index.ts",
   "scripts": {
     "webpack-build": "webpack --config webpack.config.js",
     "test1": "node --experimental-modules ./dist/test/test1.js",

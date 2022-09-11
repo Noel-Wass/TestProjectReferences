@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const fnPrintModule_1 = require("./fnPrintModule");
+const PromiseAPI_1 = require("./PromiseAPI");
 async function test() {
-    const PrintModule = await (0, fnPrintModule_1.fnPrintModule)();
-    const printModule = new PrintModule();
+    const API = await PromiseAPI_1.PromiseAPI;
+    const printModule = new API.PrintModule();
     printModule.printMessage('Hello!!!');
     printModule.printMessage('Goodbye!!!');
 }

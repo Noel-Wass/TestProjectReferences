@@ -1,11 +1,12 @@
 {
-    "include":[
-      "./src/components/*.ts",
-      "./test/*.ts",
-      "./resolve-paths-01/*.ts",
-      "./resolve-paths-02/*.ts",
-      "./resolve-paths-03/*.ts"
-    ],
+  "include": [
+    "index.ts",
+    "./src/components/*.ts",
+    "./test/*.ts",
+    "./resolve-paths-01/*.ts",
+    "./resolve-paths-02/*.ts",
+    "./resolve-paths-03/*.ts"
+  ],
     "compilerOptions":
     {
 
